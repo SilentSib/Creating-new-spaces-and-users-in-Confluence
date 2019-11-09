@@ -18,7 +18,7 @@
 # - sanitization of user input (low priority)
 # - integrate with lastpassi-cli (create new secure note and share summary of created users automatically)
 
-# "Problems:"
+# Problems:
 # - if I successfully create a user, then type the username of an existing user and then go back to creating more users, 
 #   the summary array doesn't contain whatever came before the existing username error -> fixed
 
@@ -43,7 +43,7 @@ lastPassLogin()
 
 createSecureNote()
 {
-	secureNoteTitle="Grips $(date +%Y-%m-%d) | Space: $whatSpace"
+	secureNoteTitle="Confluence $(date +%Y-%m-%d) | Space: $whatSpace"
 	for line in "${summary[@]}"; do
     	printf "$line\n"
 	done | $(lpass add Grips --non-interactive --sync=now --notes)
